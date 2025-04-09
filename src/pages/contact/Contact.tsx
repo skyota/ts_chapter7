@@ -35,42 +35,45 @@ const Contact: React.FC = () => {
           <div className="flex items-center space-y-5">
             <Label name="name" label="お名前" />
             <TextInput
-              name="name"
               type="text"
-              register={register("name", {
-                required: "お名前は必須です",
-                maxLength: {value: 30, message: "30文字以内で入力してください"}
-              })}
               error={errors.name?.message}
               disabled={isSubmitting}
+              {...register("name", {
+                required: "お名前は必須です",
+                maxLength: {
+                  value: 30,
+                  message: "30文字以内で入力してください"
+                }
+              })}
             />
           </div>
           <div className="flex items-center space-y-5">
             <Label name="email" label="メールアドレス" />
             <TextInput
-              name="email"
               type="email"
-              register={register("email", {
+              error={errors.email?.message}
+              disabled={isSubmitting}
+              {...register("email", {
                 required: "メールアドレスは必須です",
                 pattern: {
                   value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                   message: "メールアドレスの形式が正しくありません"
                 }
               })}
-              error={errors.email?.message}
-              disabled={isSubmitting}
             />
           </div>
           <div className="flex items-center space-y-5">
             <Label name="message" label="本文" />
             <Textarea
-              name="message"
-              register={register("message", {
-                required: "本文は必須です",
-                maxLength: {value: 500, message: "500文字以内で入力してください"}
-              })}
               error={errors.message?.message}
               disabled={isSubmitting}
+              {...register("message", {
+                required: "本文は必須です",
+                maxLength: {
+                  value: 500,
+                  message: "500文字以内で入力してください"
+                }
+              })}
             />
           </div>
           <div className="mt-8 flex justify-center space-x-2">
