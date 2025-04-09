@@ -4,7 +4,7 @@ import formatDate from "../../utils/formatDate";
 import { PostType } from "../../types/Post";
 import fetcher from "../../utils/fetcher"
 
-const Post = () => {
+const Post: React.FC = () => {
   const { id } = useParams<{ id: string }>();
 
   const { data, error, isLoading } = useSWR<{ post: PostType }>(

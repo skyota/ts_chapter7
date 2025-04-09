@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-const Navigation = () => {
+const Navigation: React.FC = () => {
   return (
     <>
       <ul className="flex items-center justify-between h-[inherit]">

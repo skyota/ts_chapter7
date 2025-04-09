@@ -9,7 +9,7 @@ type ContactForm = {
   message: string;
 }
 
-const Contact = () => {
+const Contact: React.FC = () => {
   const {register, handleSubmit, reset, formState: {errors, isSubmitting}} = useForm<ContactForm>();
 
   const onSubmit: SubmitHandler<ContactForm> = async (data) => {

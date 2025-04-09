@@ -3,7 +3,7 @@ import PostCard from './components/PostCard/PostCard';
 import { PostType } from "../../types/Post";
 import fetcher from "../../utils/fetcher"
 
-const TopPage = () => {
+const TopPage: React.FC = () => {
   const { data, error, isLoading } = useSWR<{ posts: PostType[] }>(
     "https://1hmfpsvto6.execute-api.ap-northeast-1.amazonaws.com/dev/posts",
     fetcher
