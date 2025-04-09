@@ -7,16 +7,6 @@ type Props = {
 }
 
 const PostCard = ({ post }: Props) => {
-  // 記事の本文を抜粋する関数
-  const getPreviewContent = (html: string, maxLines: number = 2) => {
-    const lines = html.split('<br/>');
-    const previewLines = lines.slice(0, maxLines);
-    if (previewLines.length === maxLines) {
-      previewLines[maxLines - 1] += '...';
-    }
-    return previewLines.join('<br/>');
-  };
-
   return (
     <>
       <Link to={`/posts/${post.id}`}>
@@ -37,7 +27,7 @@ const PostCard = ({ post }: Props) => {
             <p className="text-2xl">{post.title}</p>
           </div>
           <div className="mt-5">
-            <p dangerouslySetInnerHTML={{ __html: getPreviewContent(post.content) }} />
+            <p className="line-clamp-2" dangerouslySetInnerHTML={{ __html: post.content }} />
           </div>
         </div>
       </Link>
