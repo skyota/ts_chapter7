@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import formatDate from "../../../../utils/formatDate";
-import { PostType } from "../../../../types/Post";
+import { Post } from "../../../../types/Post";
 
 type Props = {
-  post: PostType; // post というキーに Post 型のデータが来ると宣言
+  post: Post; // post というキーに Post 型のデータが来ると宣言
 }
 
 const PostCard: React.FC<Props> = ({ post }) => {

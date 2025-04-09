@@ -1,13 +1,13 @@
 import useSWR from "swr";
 import { useParams } from "react-router-dom";
 import formatDate from "../../utils/formatDate";
-import { PostType } from "../../types/Post";
+import { Post } from "../../types/Post";
 import fetcher from "../../utils/fetcher"
 
-const Post: React.FC = () => {
+const PostDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
 
-  const { data, error, isLoading } = useSWR<{ post: PostType }>(
+  const { data, error, isLoading } = useSWR<{ post: Post }>(
     id ? `https://1hmfpsvto6.execute-api.ap-northeast-1.amazonaws.com/dev/posts/${id}` : null,
     fetcher
     );
@@ -43,4 +43,4 @@ const Post: React.FC = () => {
   );
 }
 
-export default Post;
+export default PostDetail;
