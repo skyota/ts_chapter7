@@ -8,7 +8,7 @@ type Props = {
   disabled: boolean;
 }
 
-const TextInput = ({ name, type, register, error, disabled }: Props) => {
+const TextInput: React.FC<Props> = ({ name, type, register, error, disabled }) => {
   return (
     <div className="w-full max-w-[calc(100%-240px)]">
       <input id={name} type={type} {...register} disabled={disabled} className="w-full px-4 py-5 border border-gray-300 rounded-md min-h-50 box-border" />

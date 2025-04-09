@@ -7,7 +7,7 @@ type Props = {
   disabled: boolean;
 }
 
-const Textarea = ({ name, register, error, disabled }: Props) => {
+const Textarea: React.FC<Props> = ({ name, register, error, disabled }) => {
   return (
     <div className="w-full max-w-[calc(100%-240px)]">
       <textarea id={name} {...register} disabled={disabled} className="w-full px-4 py-5 border border-gray-300 rounded-md min-h-50 leading-relaxed box-border" />

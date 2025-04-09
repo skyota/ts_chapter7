@@ -6,7 +6,7 @@ type Props = {
   post: PostType; // post というキーに Post 型のデータが来ると宣言
 }
 
-const PostCard = ({ post }: Props) => {
+const PostCard: React.FC<Props> = ({ post }) => {
   return (
     <>
       <Link to={`/posts/${post.id}`}>
